@@ -2,12 +2,17 @@
 import { store } from '../store';
 export default {
     name: 'Founded',
+    data() {
+        return {
+            store,
+        }
+    }
 }
 </script>
 
 <template>
     <div class="founded">
-        <p></p>
+        <p>Found {{ store.cards.length }} cards</p>
     </div>
 </template>
 
@@ -18,5 +23,10 @@ export default {
     background-color: $founded-bg;
     padding: 18px;
     color: $cards-bg;
+
+    p {
+        font-size: 14px;
+        font-weight: bold;
+    }
 }
 </style>
