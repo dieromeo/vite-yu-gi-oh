@@ -10,8 +10,19 @@ export default {
 </script>
 
 <template>
-    <Logo />
-    header
+    <header>
+        <Logo />
+        <h1>Yu-Gi-Oh Api</h1>
+    </header>
 </template>
 
-<style></style>
+<style lang="scss">
+header {
+    display: flex;
+    align-items: center;
+
+    h1 {
+        padding: 18px 0;
+    }
+}
+</style>
