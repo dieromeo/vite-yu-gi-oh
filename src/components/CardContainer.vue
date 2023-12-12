@@ -12,8 +12,19 @@ export default {
 </script>
 
 <template>
-    <Founded />
-    <Card />
+    <div class="card-container">
+        <Founded />
+        <Card />
+    </div>
 </template>
 
-<style></style>
+<style lang="scss">
+@use '../style/partials/variables' as *;
+
+.card-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: $cards-bg;
+}
+</style>

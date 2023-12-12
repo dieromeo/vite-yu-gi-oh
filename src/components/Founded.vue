@@ -5,7 +5,17 @@ export default {
 </script>
 
 <template>
-    founded cards
+    <div class="founded">
+        <p>founded</p>
+    </div>
 </template>
 
-<style></style>
+<style lang="scss">
+@use '../style/partials/variables' as *;
+
+.founded {
+    background-color: $founded-bg;
+    padding: 18px;
+    color: $cards-bg;
+}
+</style>
