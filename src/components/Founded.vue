@@ -1,12 +1,13 @@
 <script>
+import { store } from '../store';
 export default {
-    name: 'Founded'
+    name: 'Founded',
 }
 </script>
 
 <template>
     <div class="founded">
-        <p>founded</p>
+        <p></p>
     </div>
 </template>
 
