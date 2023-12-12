@@ -12,8 +12,16 @@ export default {
 </script>
 
 <template>
-    <SearchCard />
-    <CardContainer />
+    <main>
+        <SearchCard />
+        <CardContainer />
+    </main>
 </template>
 
-<style></style>
+<style lang="scss">
+@use '../style/partials/variables' as *;
+
+main {
+    background-color: $main-bg;
+}
+</style>
