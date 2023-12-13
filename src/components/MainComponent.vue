@@ -22,8 +22,6 @@ export default {
         searchCard() {
             if (store.searchInput !== '') {
                 axios.get(store.urlApiCards + 'archetype=' + store.searchInput).then((response) => {
-                    console.log('Archetipo' + store.searchInput)
-                    console.log(response.data.data);
                     store.cards = response.data.data;
                 });
             }
