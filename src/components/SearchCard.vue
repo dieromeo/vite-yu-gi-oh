@@ -5,7 +5,7 @@ export default {
     name: 'SearchCard',
     data() {
         return {
-            store
+            store,
         }
     },
     //chiamata api per gli archetipi
@@ -21,8 +21,10 @@ export default {
     <div class="select-container">
         <!-- select per la ricerca delle carte  -->
         <label for="card"></label>
-        <select name="card" id="card">
-            <option v-for="archetype in store.archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}
+        <select name="card" id="card" v-model="store.searchInput" @click="$emit('search')">
+            <option value="">Select an archetype</option>
+            <option v-for="archetype in store.archetypes" :value="archetype.archetype_name">{{
+                archetype.archetype_name }}
             </option>
         </select>
     </div>

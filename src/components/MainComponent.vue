@@ -16,16 +16,29 @@ export default {
         CardContainer
     },
     created() {
-        axios.get(store.urlApiCards).then((response) => {
-            store.cards = response.data.data;
-        });
+        this.searchCard()
+    },
+    methods: {
+        searchCard() {
+            if (store.searchInput !== '') {
+                axios.get(store.urlApiCards + 'archetype=' + store.searchInput).then((response) => {
+                    // console.log(response.data.data);
+                    store.cards = response.data.data;
+                });
+            }
+            else {
+                axios.get(store.urlApiCards).then((response) => {
+                    store.cards = response.data.data;
+                });
+            }
+        }
     }
 }
 </script>
 
 <template>
     <main>
-        <SearchCard />
+        <SearchCard @search="searchCard" />
         <CardContainer :carte="store.cards" />
     </main>
 </template>
