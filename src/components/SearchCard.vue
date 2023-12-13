@@ -1,6 +1,19 @@
 <script>
+import axios from 'axios';
+import { store } from '../store';
 export default {
-    name: 'SearchCard'
+    name: 'SearchCard',
+    data() {
+        return {
+            store
+        }
+    },
+    //chiamata api per gli archetipi
+    created() {
+        axios.get(store.urlApiArchetypes).then((response) => {
+            store.archetypes = response.data;
+        })
+    }
 }
 </script>
 
@@ -9,7 +22,8 @@ export default {
         <!-- select per la ricerca delle carte  -->
         <label for="card"></label>
         <select name="card" id="card">
-            <option value="Alien">Alien</option>
+            <option v-for="archetype in store.archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}
+            </option>
         </select>
     </div>
 </template>

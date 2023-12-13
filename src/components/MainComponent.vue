@@ -16,9 +16,8 @@ export default {
         CardContainer
     },
     created() {
-        axios.get(store.urlApi).then((response) => {
+        axios.get(store.urlApiCards).then((response) => {
             store.cards = response.data.data;
-            console.log(store.cards[1].card_images[0].image_url)
         });
     }
 }
