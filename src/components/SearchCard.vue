@@ -21,7 +21,7 @@ export default {
     <div class="select-container">
         <!-- select per la ricerca delle carte  -->
         <label for="card"></label>
-        <select name="card" id="card" v-model="store.searchInput" @click="$emit('search')">
+        <select name="card" id="card" v-model="store.searchInput" @change="$emit('search')">
             <option value="">Select an archetype</option>
             <option v-for="archetype in store.archetypes" :value="archetype.archetype_name">{{
                 archetype.archetype_name }}

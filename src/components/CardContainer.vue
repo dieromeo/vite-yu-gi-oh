@@ -1,14 +1,19 @@
 <script>
 import Card from './Card.vue';
 import Founded from './Founded.vue';
+import { store } from '../store';
 
 export default {
     name: 'CardContainer',
-    props: ['carte'],
     components: {
         Founded,
         Card
     },
+    data() {
+        return {
+            store
+        }
+    }
 }
 
 </script>
@@ -17,7 +22,7 @@ export default {
     <div class="container">
         <Founded />
         <div class="card-container">
-            <Card v-for="(card, index) in carte" :immagine="card.card_images[0].image_url_small" :nome="card.name"
+            <Card v-for="card in store.cards" :immagine="card.card_images[0].image_url_small" :nome="card.name"
                 :tipo="card.type" />
         </div>
     </div>
